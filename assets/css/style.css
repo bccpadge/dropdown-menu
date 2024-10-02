@@ -1,0 +1,267 @@
+@font-face {
+  font-family: "Exo";
+  src: url("../fonts/exo-v21-latin-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../fonts/exo-v21-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../fonts/exo-v21-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* !css vaariables */
+:root {
+  --clr-primary-400: 0 0% 38%;
+  --clr-secondary-400: 0 3% 7%;
+  --clr-accent-400: 228 100% 80%;
+  --clr-neutral-400: 0 0% 100%;
+
+
+  --clr-border: 0 0% 16%;
+
+  --fs-200: 0.875rem;
+  --fs-300: 0.9375rem;
+  --fs-400: 1rem;
+  --fw-light: 300;
+  --ff-body: "Exo", sans-serif;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  --webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* !snnipets from Andy Bell Modern CSS Reset */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* sometimes referred to as .sr-only */
+.visually-hidden:not(:focus):not(:active):not(:focus-within) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+*:focus-visible {
+  outline: 3px dotted hsl(var(--clr-accent-400));
+  outline-offset: 5px;
+}
+
+/* !general styles */
+body {
+  font-family: var(--ff-body);
+  display: grid;
+  place-content: center;
+  min-height: 100dvh;
+  background-color: hsl(var(--clr-primary-400));
+  color: hsl(var(--clr-neutral-400));
+  margin-inline: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+
+/* !utility classes */
+:is(ul, .plan) {
+  border-block: 1px solid hsl(var(--clr-border));
+}
+
+.text-sm {
+  font-size: var(--fs-200);
+}
+
+:is(.upgrade-btn, .logout-btn) {
+  font-size: var(--fs-300);
+}
+
+.spacer {
+  margin-block-start: var(--_spacer, 1em);
+}
+
+.dropdown-wrapper {
+  background-color: hsl(var(--clr-secondary-400));
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.3125rem;
+  max-width: 23.75rem;
+}
+
+/* !header styles */
+header {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 0.3125rem;
+
+  h2 {
+    font-weight: var(--fs-400);
+  }
+}
+
+.user-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.user-info {
+  display: grid;
+  place-content: center;
+}
+
+.avatar-banner img {
+  border-radius: 50%;
+}
+
+/* !dropdown styles */
+.dropdown-btn {
+  color: hsl(var(--clr-neutral-400));
+}
+
+.dropdown-group {
+  opacity: 0;
+  display: none;
+  transition: opacity 350ms ease-in-out;
+}
+
+.dropdown-group.active {
+  opacity: 1;
+  display: block;
+}
+
+.dropdown-item:hover {
+  --clr-bkg-hover: 0 0% 16%;
+
+  background-color: hsl(var(--clr-bkg-hover));
+  color: hsl(var(--clr-neutral-400));
+  border-radius: 0.3125rem;
+}
+
+ul {
+  padding: 0;
+  padding-block: 0.625rem;
+
+  li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .info {
+    margin-block: 0.625rem;
+  }
+}
+
+/* !button styles */
+.upgrade-btn {
+  background-color: hsl(var(--clr-accent-400));
+  color: hsl(var(--clr-secondary-400));
+  padding: 0.3125em 0.5625em;
+  border-radius: 0.3125rem;
+}
+
+.logout-btn {
+  color: inherit;
+}
+
+
+/* !JavaScript styles */
+.highlight {
+  --clr-bkg-highlight: 246 66% 14%;
+  background-color: hsl(var(--clr-bkg-highlight));
+}

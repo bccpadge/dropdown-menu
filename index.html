@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="WebDevDaily - Dropdown Menu">
+  <meta name="keywords" content="HTML, CSS">
+  <meta name="author" content="Rebecca Padgett">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+  <title>WebDevDaily | Dropdown Menu</title>
+  <!-- !remix icon cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- !css -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script defer src="./assets/js/script.js"></script>
+</head>
+
+<body>
+  <main class="dropdown-wrapper">
+    <h1 class="visually-hidden">Dropdown Menu</h1>
+    <article>
+      <header>
+        <div class="user-group">
+          <figure class="avatar-banner">
+            <img src="./assets/images/avatar-george.jpg" width="50" height="50" alt=" headshot of George Sears">
+            <figcaption class="visually-hidden">A portait of George Sears</figcaption>
+          </figure>
+          <div class="user-info">
+            <h2 class="text-sm">George Sears</h2>
+            <small class="text-sm">georgesears@gmail.com</small>
+          </div>
+        </div>
+        <button class="dropdown-btn" data-js-toggle aria-expanded="false" aria-controls="profile-dropdown">
+          <i class="ri-expand-up-down-line"></i>
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+      </header>
+      <div class="dropdown-group" aria-label="Profile Dropdown" data-js-dropdown id="profile-dropdown">
+        <ul class="dropdown-menu" role="list">
+          <li class="dropdown-item" data-js-item>
+            <i class="ri-user-line" aria-hidden="true"></i>
+            <a href="#">Account Settings</a>
+          </li>
+          <li class="dropdown-item" data-js-item>
+            <i class="ri-layout-grid-line" aria-hidden="true"></i>
+            <a href="#">Integrations</a>
+          </li>
+          <li class="dropdown-item" data-js-item>
+            <i class="ri-settings-2-line" aria-hidden="true"></i>
+            <a href="#">Settings</a>
+          </li>
+          <li class="dropdown-item" data-js-item>
+            <i class="ri-file-3-line" aria-hidden="true"></i>
+            <a href="#">Guide</a>
+          </li>
+          <li class="dropdown-item" data-js-item>
+            <i class="ri-question-line" aria-hidden="true"></i>
+            <a href="#">Help Center</a>
+          </li>
+        </ul>
+        <div class="plan">
+          <div class="info">
+            <p>Free Plan</p>
+            <small class="text-sm">12,500 views</small>
+          </div>
+          <div>
+            <button class="upgrade-btn">Upgrade</button>
+          </div>
+        </div>
+        <button class="logout-btn spacer">
+          <i class="ri-login-circle-line" title="Logout of your account"></i>
+          Logout
+        </button>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>
